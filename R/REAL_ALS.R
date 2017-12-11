@@ -121,10 +121,13 @@ REAL_ALS <- function(data, parameter= NULL) {
 # Sys.setenv("PKG_CXXFLAGS" = "-fopenmp")
 # Sys.setenv("PKG_LIBS" = "-fopenmp")
 
-# recommenderRegistry$delete_entry(
-#   method="ALS", dataType = "realRatingMatrix", fun=REAL_ALS,
-#   description="Recommender based on Low Rank Matrix Factorization ALS (real data).")
-# 
+# Helper functions
+if( !is.null(recommenderRegistry["ALS", "realRatingMatrix"])) {
+  recommenderRegistry$delete_entry(
+    method="ALS", dataType = "realRatingMatrix", fun=REAL_ALS,
+    description="Recommender based on Low Rank Matrix Factorization ALS (real data).")
+}
+
 recommenderRegistry$set_entry(
   method="ALS", dataType = "realRatingMatrix", fun=REAL_ALS,
   description="Recommender based on Low Rank Matrix Factorization ALS (real data).")

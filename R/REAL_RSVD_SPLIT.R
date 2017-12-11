@@ -248,11 +248,11 @@ grr_Theta <- function(params, Y, R, num_users, num_movies, num_features, lambda,
 }
 
 # Helper functions
-# if( !is.null(recommenderRegistry["RSVD_SPLIT", "realRatingMatrix"])) {
-#   recommenderRegistry$delete_entry(
-#     method="RSVD_SPLIT", dataType = "realRatingMatrix", fun=REAL_RSVD_SPLIT,
-#     description="Recommender based on Low Rank Matrix Factorization (real data).")
-# }
+if( !is.null(recommenderRegistry["RSVD_SPLIT", "realRatingMatrix"])) {
+  recommenderRegistry$delete_entry(
+    method="RSVD_SPLIT", dataType = "realRatingMatrix", fun=REAL_RSVD_SPLIT,
+    description="Recommender based on Low Rank Matrix Factorization (real data).")
+}
 
 # register recommender
 recommenderRegistry$set_entry(

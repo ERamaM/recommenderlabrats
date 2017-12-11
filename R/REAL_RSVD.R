@@ -155,11 +155,11 @@ REAL_RSVD <- function(data, parameter= NULL) {
 }
 
 # Helper functions
-# if( !is.null(recommenderRegistry["RSVD", "realRatingMatrix"])) {
-#   recommenderRegistry$delete_entry(
-#     method="RSVD", dataType = "realRatingMatrix", fun=REAL_RSVD,
-#     description="Recommender based on Low Rank Matrix Factorization (real data).")
-# }
+if( !is.null(recommenderRegistry["RSVD", "realRatingMatrix"])) {
+  recommenderRegistry$delete_entry(
+    method="RSVD", dataType = "realRatingMatrix", fun=REAL_RSVD,
+    description="Recommender based on Low Rank Matrix Factorization (real data).")
+}
 
 # register recommender
 recommenderRegistry$set_entry(
